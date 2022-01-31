@@ -23,4 +23,9 @@ class Connection {
         $data = $cmd->fetchAll();
         return $data;
     } 
+    function delete($id){
+        $cmd = $this->pdo->prepare('DELETE FROM task WHERE id = :id');
+        $cmd->bindValue(':id',$id);
+        $cmd->execute();       
+    }
     }
