@@ -28,4 +28,18 @@ class Connection {
         $cmd->bindValue(':id',$id);
         $cmd->execute();       
     }
+    function adicionarItemRotina($nome,$desc,$time){
+        $cmd = $this->pdo->prepare('INSERT INTO routine (name,description,date) values (:n,:d,:t)');
+        $cmd->bindValue(':n',$nome);
+        $cmd->bindValue(':d',$desc);
+        $cmd->bindValue(':t',$time);
+        $cmd->execute();
+    }
+    function BuscarRotina(){
+        $cmd = $this->pdo->prepare('SELECT * FROM routine ');
+        $cmd->execute();
+        $data = $cmd->fetchAll();
+        return $data;
+    }
+
     }

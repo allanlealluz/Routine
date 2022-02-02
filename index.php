@@ -37,7 +37,7 @@
         $mes2 = $data_fim->format('m');
         $dia2 = $data_fim->format('d');
         $ano2 = $data_fim->format('Y');
-        if ($dia1 < $dia2 || $mes1 < $mes2 || $ano1 < $ano2 ){
+        if ($mes1 <= $mes2 && $ano1 <= $ano2 ){
             $dateInterval = $data_inicio->diff($data_fim);
             echo 'Faltam '.$dateInterval->days.' dias';
         } else {
