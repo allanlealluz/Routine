@@ -27,7 +27,7 @@
     $t = new Connection("localhost", 'routine', 'root' ,'', 'utf8'); 
     $data = $t->BuscarRotina();
     foreach($data as $v){
-        ?><div class="card">
+        ?><div class="card" name='n'>
  <h2><?php echo $v['name'] ?></h2>
  <h2><?php echo $v['description'] ?></h2>
  <h3 id='date'><?php echo $v['date'] ?></h3>

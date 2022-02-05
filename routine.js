@@ -38,10 +38,12 @@ function timer(){
 }
 function comparadorTempo(time){
     t = document.getElementsByTagName('h3')
+    div = document.getElementsByName('n')
     for(var i = 0; i < t.length; i++){
-        if (t[i].innerHTML == time){
-            console.log(t[i].innerHTML)
-            console.log('xarai')
+        if (t[i].innerHTML <= time){
+            t[i].innerHTML = ''
+            div[i].remove()
+            
         }
     }
 }

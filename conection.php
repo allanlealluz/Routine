@@ -36,7 +36,7 @@ class Connection {
         $cmd->execute();
     }
     function BuscarRotina(){
-        $cmd = $this->pdo->prepare('SELECT * FROM routine ');
+        $cmd = $this->pdo->prepare('SELECT * FROM routine ORDER BY date');
         $cmd->execute();
         $data = $cmd->fetchAll();
         return $data;
